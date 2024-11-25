@@ -5,6 +5,7 @@ import { useHungerContext } from '@/app/contexts/HungerContext';
 import { useIQContext } from '@/app/contexts/IqContext';
 import { useMotivationContext } from '@/app/contexts/MotivationContext';
 import MotivationBar from '@/app/components/MotivationBar';
+import HungerBar from './components/HungerBar';
 import './style.css';
 
 export default function Home() {
@@ -91,6 +92,7 @@ export default function Home() {
         <h1>My FASH Tamagotchi Stats</h1>
         <p>Health: {health}</p>
         <p>Hunger: {hunger}</p>
+        <HungerBar />
         <p>IQ: {IQ}</p>
         <p>Motivation: {motivation}</p>
         {/* <p>hi</p> */}
