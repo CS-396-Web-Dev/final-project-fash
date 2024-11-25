@@ -8,10 +8,10 @@ import './style.css';
 
 export default function Home() {
   // // add states
-  // const { health, setHealth } = useHealthContext();
-  // const { hunger, setHunger } = useHungerContext();
-  // const { IQ, setIQ } = useIQContext();
-  // const { motivation, setMotivation } = useMotivationContext();
+  const { health, setHealth } = useHealthContext();
+  const { hunger, setHunger } = useHungerContext();
+  const { IQ, setIQ } = useIQContext();
+  const { motivation, setMotivation } = useMotivationContext();
 
 
 
