@@ -25,7 +25,11 @@ import {
   export default function MotivationContextProvider({
     children,
   }: MotivationContextProviderProps) {
-    const [motivation, setMotivation] = useState(50);
+
+    const savedMotivation = localStorage.getItem('motivation');
+    const initialMotivation = savedMotivation ? JSON.parse(savedMotivation) : 50;
+
+    const [motivation, setMotivation] = useState(initialMotivation);
 
     return (
         <MotivationContext.Provider value={{ motivation, setMotivation }}>
