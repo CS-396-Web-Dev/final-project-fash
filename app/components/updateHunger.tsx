@@ -13,9 +13,7 @@ export default function UpdateHunger({ updateValue }: HungerProps) {
 
   // Function to update the health by passed in value
   const onUpdateHunger = () => {
-    if (hunger >= 5) {
-        setHunger(hunger + updateValue);
-    }
+    setHunger(Math.max(hunger + updateValue, 0));
   };
 
     // Log whenever health changes
