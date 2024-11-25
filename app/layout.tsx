@@ -3,6 +3,7 @@ import HealthContextProvider from '@/app/contexts/HealthContext';
 import HungerContextProvider from '@/app/contexts/HungerContext';
 import MotivationContextProvider from '@/app/contexts/MotivationContext';
 import IQContextProvider from '@/app/contexts/IqContext';
+import './globals.css'
 
 // export const metadata = {
 //   title: 'Next.js',
