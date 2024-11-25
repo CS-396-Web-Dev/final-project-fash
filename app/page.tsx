@@ -65,13 +65,13 @@ export default function Home() {
   useEffect(() => {
     const savedMotivation = localStorage.getItem('motivation');
     if (savedMotivation) {
-      setMotivation(JSON.parse(savedMotivation)); // set IQ state to stored IQ
+      setMotivation(JSON.parse(savedMotivation)); // set motivation state to stored motivation
     }
   }, []);
 
-  // save IQ state to localStorage, whenever IQ state changes
+  // save motivation state to localStorage, whenever motivation state changes
   useEffect(() => {
-    localStorage.setItem('motivation', JSON.stringify(motivation)); // save the IQ state locally
+    localStorage.setItem('motivation', JSON.stringify(motivation)); // save the motivation state locally
   }, [motivation]);
 
   // return HTML
