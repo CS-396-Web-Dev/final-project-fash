@@ -6,6 +6,7 @@ import { useIQContext } from '@/app/contexts/IqContext';
 import { useMotivationContext } from '@/app/contexts/MotivationContext';
 import MotivationBar from '@/app/components/MotivationBar';
 import HungerBar from './components/HungerBar';
+import UpdateMotivation from '@/app/components/updateMotivation';
 import './style.css';
 
 export default function Home() {
@@ -97,6 +98,7 @@ export default function Home() {
         <p>Motivation: {motivation}</p>
         {/* <p>hi</p> */}
         <MotivationBar/>
+        <UpdateMotivation updateValue={5}/>
       </body>
     </html>
   );
