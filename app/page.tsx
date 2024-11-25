@@ -75,5 +75,6 @@ export default function Home() {
   }, [motivation]);
 
   // return HTML
-  return ();
+  return (
+  );
 }
