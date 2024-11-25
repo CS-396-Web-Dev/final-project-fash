@@ -90,7 +90,7 @@ export default function Home() {
         <h1>My FASH Tamagotchi Stats</h1>
         <p>Health: {health}</p>
         <p>Hunger: {hunger}</p>
-        <p>IQ: {iq}</p>
+        <p>IQ: {IQ}</p>
         <p>Motivation: {motivation}</p>
       </body>
     </html>
