@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useHealthContext } from '@/app/contexts/HealthContext';
 import { useHungerContext } from '@/app/contexts/HungerContext';
 import { useIqContext } from '@/app/contexts/IqContext';
-import { useMotivationContext } from '@/app/contexts/Motivation';
+import { useMotivationContext } from '@/app/contexts/MotivationContext';
 import './style.css';
 
 export default function Home() {
