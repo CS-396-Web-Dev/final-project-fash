@@ -76,6 +76,17 @@ export default function Home() {
 
   // return HTML
   return (
-    
+    <html>
+      <head>
+        <title>Tamagotchi Stats</title>
+      </head>
+      <body>
+        <h1>My FASH Tamagotchi Stats</h1>
+        <p>Health: {health}</p>
+        <p>Hunger: {hunger}</p>
+        <p>IQ: {iq}</p>
+        <p>Motivation: {motivation}</p>
+      </body>
+    </html>
   );
 }
