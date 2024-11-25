@@ -4,6 +4,7 @@ import { useHealthContext } from '@/app/contexts/HealthContext';
 import { useHungerContext } from '@/app/contexts/HungerContext';
 import { useIQContext } from '@/app/contexts/IqContext';
 import { useMotivationContext } from '@/app/contexts/MotivationContext';
+import MotivationBar from '@/app/components/MotivationBar';
 import './style.css';
 
 export default function Home() {
@@ -92,6 +93,8 @@ export default function Home() {
         <p>Hunger: {hunger}</p>
         <p>IQ: {IQ}</p>
         <p>Motivation: {motivation}</p>
+        {/* <p>hi</p> */}
+        <MotivationBar/>
       </body>
     </html>
   );
