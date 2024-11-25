@@ -40,13 +40,13 @@ export default function Home() {
 
   // // HUNGER
   
-  // load hunger state from localStorage when home page mounts
-  useEffect(() => {
-    const savedHunger = localStorage.getItem('hunger');
-    if (savedHunger) {
-      setHunger(JSON.parse(savedHunger)); // set hunger state to stored hunger
-    }
-  }, []);
+  // // load hunger state from localStorage when home page mounts
+  // useEffect(() => {
+  //   const savedHunger = localStorage.getItem('hunger');
+  //   if (savedHunger) {
+  //     setHunger(JSON.parse(savedHunger)); // set hunger state to stored hunger
+  //   }
+  // }, []);
 
   // save hunger state to localStorage, whenever hunger state changes
   useEffect(() => {

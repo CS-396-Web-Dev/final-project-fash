@@ -26,7 +26,13 @@ export const useHungerContext = () => useContext(HungerContext);
 export default function HungerContextProvider({
     children,
 }: HungerContextProviderProps) {
-    const [hunger, setHunger] = useState(100);
+
+    const savedHunger = localStorage.getItem('hunger');
+    const initialHunger = savedHunger ? JSON.parse(savedHunger) : 100;
+
+    const [hunger, setHunger] = useState(initialHunger);
+
+
 
     return (
         <HungerContext.Provider value={{ hunger, setHunger }}>
