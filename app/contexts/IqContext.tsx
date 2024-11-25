@@ -6,7 +6,7 @@ import {
     Dispatch,
 } from 'react';
 
-interface IqContextProviderProps {
+interface IQContextProviderProps {
     children: ReactNode;
 }
 
@@ -16,21 +16,21 @@ interface IQ {
 }
 
 // initial IQ context
-const IqContext = createContext<IQ>({
+const IQContext = createContext<IQ>({
     IQ: 100,
     setIQ: () => {},
 });
 
-export const useIqContext = () => useContext(IqContext);
+export const useIQContext = () => useContext(IQContext);
 
-export default function IqContextProvider({
+export default function IQContextProvider({
     children,
-}: IqContextProviderProps) {
+}: IQContextProviderProps) {
     const [IQ, setIQ] = useState(100);
 
     return (
-        <IqContext.Provider value={{ IQ, setIQ }}>
+        <IQContext.Provider value={{ IQ, setIQ }}>
             {children}
-        </IqContext.Provider>
+        </IQContext.Provider>
     )
 }
