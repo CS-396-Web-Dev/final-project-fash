@@ -1,13 +1,19 @@
 'use client';
 import { useEffect, useState } from 'react';
+import { useHealthContext } from '@/app/contexts/HealthContext';
+import { useHungerContext } from '@/app/contexts/HungerContext';
+import { useIqContext } from '@/app/contexts/IqContext';
+import { useMotivationContext } from '@/app/contexts/Motivation';
 import './style.css';
 
 export default function Home() {
   // add states
-  const [health, setHealth] = useState(100);
-  const [hunger, setHunger] = useState(100);
-  const [iq, setIq] = useState(100);
-  const [motivation, setMotivation] = useState(100);
+  const { health, setHealth } = useHealthContext();
+  const { hunger, setHunger } = useHungerContext();
+  const { IQ, setIqContext } = useIqContext();
+  const { motivation, setMotivation } = useMotivationContext();
+
+
 
   //
   // // LOCAL STORAGE: STATES
