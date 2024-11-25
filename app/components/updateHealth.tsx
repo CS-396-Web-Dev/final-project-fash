@@ -1,34 +1,25 @@
-'use client';
-// import { useRecipeContext } from '@/app/components/recipeContext';
-// import Recipe from '@/app/components/recipeContext';
-import { useState } from 'react';
+import { useHealthContext } from '@/app/contexts/HealthContext';
+import { useEffect } from 'react';
+
 // var counter: number = 0;
 
-// interface addRecipeProps {
-//   recipeName: string;
-// }
 
 interface HealthProps {
     updateValue: number;
-    setHealth: Dispatch<any>;
   }
 
-export default function addRecipe({}) {
+export default function UpdateHealth({ updateValue }: HealthProps) {
+    const { setHealth, health } = useHealthContext();
 
-  // Function to remove a recipe by index
-  const onAddRecipe = () => {
-    const newRecipe = {
-      recipeName: input,
-      recipeID: counter,
-      steps: {},
-    };
-    setRecipe((existingRecipes: { [id: number]: Recipe }) => ({
-      ...existingRecipes,
-      [counter]: newRecipe,
-    }));
-    console.log(recipes);
-    counter = counter + 1;
+  // Function to update the health by passed in value
+  const onUpdateHealth = () => {
+    setHealth(health + updateValue);
   };
+
+    // Log whenever health changes
+    useEffect(() => {
+    console.log(health);
+    }, [health]);
 
   return (
     <>
@@ -37,11 +28,10 @@ export default function addRecipe({}) {
           id="add-btn"
           onClick = {(e) => {
             e.preventDefault();
-            onAddRecipe();
-            setInput('');
+            onUpdateHealth();
           }}
         >
-          Add
+          Update Health
         </button>
     </>
   );
