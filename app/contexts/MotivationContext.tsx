@@ -16,7 +16,7 @@ import {
   }
 
   const MotivationContext = createContext<Motivation>({
-    motivation: 0,
+    motivation: 50,
     setMotivation: () => {},
   });
 
@@ -25,7 +25,7 @@ import {
   export default function MotivationContextProvider({
     children,
   }: MotivationContextProviderProps) {
-    const [motivation, setMotivation] = useState(0);
+    const [motivation, setMotivation] = useState(50);
 
     return (
         <MotivationContext.Provider value={{ motivation, setMotivation }}>
