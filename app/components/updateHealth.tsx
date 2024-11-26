@@ -13,9 +13,7 @@ export default function UpdateHealth({ updateValue }: HealthProps) {
 
   // Function to update the health by passed in value
   const onUpdateHealth = () => {
-    if (health < 100 && health > 0){
-      setHealth(health + updateValue);
-    }
+    setHealth(Math.min(Math.max(health + updateValue, 0), 100));
   };
 
     // Log whenever health changes

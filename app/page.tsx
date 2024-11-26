@@ -99,9 +99,11 @@ export default function Home() {
         <p>Health: {health}</p>
         <HealthBar/>
         <UpdateHealth updateValue={-5}/>
+        <UpdateHealth updateValue={5}/>
         <p>Hunger: {hunger}</p>
         <HungerBar />
         <UpdateHunger updateValue={-5} />
+        <UpdateHunger updateValue={5} />
         <p>IQ: {IQ}</p>
         <p>Motivation: {motivation}</p>
         {/* <p>hi</p> */}
