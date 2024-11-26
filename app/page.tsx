@@ -6,8 +6,10 @@ import { useIQContext } from '@/app/contexts/IqContext';
 import { useMotivationContext } from '@/app/contexts/MotivationContext';
 import MotivationBar from '@/app/components/MotivationBar';
 import HungerBar from './components/HungerBar';
+import HealthBar from '@/app/components/HealthBar';
 import UpdateMotivation from '@/app/components/updateMotivation';
 import UpdateHunger from './components/updateHunger';
+import UpdateHealth from '@/app/components/updateHealth';
 import './style.css';
 
 export default function Home() {
@@ -93,6 +95,8 @@ export default function Home() {
       <body>
         <h1>My FASH Tamagotchi Stats</h1>
         <p>Health: {health}</p>
+        <HealthBar/>
+        <UpdateHealth updateValue={-5}/>
         <p>Hunger: {hunger}</p>
         <HungerBar />
         <UpdateHunger updateValue={-5} />
