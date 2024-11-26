@@ -3,7 +3,7 @@ import { useIQContext } from '@/app/contexts/IqContext';
 import { useHealthContext } from '@/app/contexts/HealthContext';
 import { useEffect } from 'react';
 
-export default function recipeCarousel() {
+export default function displayCharacter() {
   const { IQ, setIQ } = useIQContext();
   const { health, setHealth} = useHealthContext();
 
@@ -18,11 +18,11 @@ export default function recipeCarousel() {
 //     }, [health]);
 
   return (
-    <div className="flex flex-wrap justify-start gap-5 p-5">
+    <div className="inline-block">
         <img
           src={`character_health${health}_iq${IQ}`}
           alt="my image"
-          className="w-8 h-8"
+          className="w-20 h-20"
         />
     </div>
   );

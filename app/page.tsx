@@ -10,6 +10,8 @@ import HealthBar from '@/app/components/HealthBar';
 import UpdateMotivation from '@/app/components/updateMotivation';
 import UpdateHunger from './components/updateHunger';
 import UpdateHealth from '@/app/components/updateHealth';
+
+import DisplayCharacter from '@/app/components/DisplayCharacter';
 import './style.css';
 
 export default function Home() {
@@ -105,6 +107,7 @@ export default function Home() {
         {/* <p>hi</p> */}
         <MotivationBar/>
         <UpdateMotivation updateValue={5}/>
+        <DisplayCharacter/>
       </body>
     </html>
   );
