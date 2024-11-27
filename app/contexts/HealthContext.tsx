@@ -27,7 +27,7 @@ export const useHealthContext = () => useContext(HealthContext);
 export default function HealthContextProvider({
   children,
 }: HealthContextProviderProps) {
-  const savedHealth = localStorage.getItem('hunger');
+  const savedHealth = localStorage.getItem('health');
   const initialHealth = savedHealth ? JSON.parse(savedHealth) : 100;
 
   const [health, setHealth] = useState(initialHealth);

@@ -98,17 +98,27 @@ export default function Home() {
         <h1>My FASH Tamagotchi Stats</h1>
         <p>Health: {health}</p>
         <HealthBar/>
-        <UpdateHealth updateValue={-5}/>
-        <UpdateHealth updateValue={5}/>
-        <p>Hunger: {hunger}</p>
+        <div>
+          <UpdateHealth buttonName={"Eat Dining Hall Food"} updateValue={-5}/>
+          <UpdateHealth buttonName={"Exercise"} updateValue={5}/>
+        </div>
+
+        <p>Satiety: {hunger}</p>
         <HungerBar />
-        <UpdateHunger updateValue={-5} />
-        <UpdateHunger updateValue={5} />
+        <div>
+          <UpdateHunger buttonName={"Starve"} updateValue={-5} />
+          <UpdateHunger buttonName={"Feed"} updateValue={5} />
+        </div>
+
         <p>IQ: {IQ}</p>
+
         <p>Motivation: {motivation}</p>
-        {/* <p>hi</p> */}
         <MotivationBar/>
-        <UpdateMotivation updateValue={5}/>
+        <div>
+          <UpdateMotivation buttonName={"Scold"} updateValue={-5}/>
+          <UpdateMotivation buttonName={"Praise"} updateValue={5}/>
+        </div>
+
         <DisplayCharacter/>
       </body>
     </html>

@@ -6,17 +6,18 @@ import { useEffect } from 'react';
 
 interface HungerProps {
     updateValue: number;
+    buttonName: string;
   }
 
-export default function UpdateHunger({ updateValue }: HungerProps) {
+export default function UpdateHunger({ updateValue, buttonName }: HungerProps) {
     const { setHunger, hunger } = useHungerContext();
 
-  // Function to update the health by passed in value
+  // Function to update the hunger by passed in value
   const onUpdateHunger = () => {
-    setHunger(Math.max(hunger + updateValue, 0));
+    setHunger(Math.min(Math.max(hunger + updateValue, 0), 100));
   };
 
-    // Log whenever health changes
+    // Log whenever hunger changes
     useEffect(() => {
     console.log(hunger);
     }, [hunger]);
@@ -31,7 +32,7 @@ export default function UpdateHunger({ updateValue }: HungerProps) {
             onUpdateHunger();
           }}
         >
-          Feed
+          {buttonName}
         </button>
     </>
   );

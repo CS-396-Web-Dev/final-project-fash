@@ -6,15 +6,16 @@ import { useEffect } from 'react';
 
 interface MotivationProps {
   updateValue: number;
+  buttonName: string;
 }
 
-export default function UpdateMotivation({ updateValue }: MotivationProps) {
+export default function UpdateMotivation({ updateValue, buttonName }: MotivationProps) {
     const { motivation, setMotivation } = useMotivationContext();
 
   // Function to update the health by passed in value
   const onUpdateMotivation = () => {
     // we're assuming that motivation bar wants a percentage value
-    setMotivation(Math.min(motivation + updateValue, 100));
+    setMotivation(Math.min(Math.max(motivation + updateValue, 0), 100));
   };
 
     // Log whenever health changes
@@ -32,7 +33,7 @@ export default function UpdateMotivation({ updateValue }: MotivationProps) {
             onUpdateMotivation();
           }}
         >
-          Update Motivation
+          {buttonName}
         </button>
     </>
   );

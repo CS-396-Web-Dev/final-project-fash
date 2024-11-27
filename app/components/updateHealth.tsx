@@ -6,9 +6,10 @@ import { useEffect } from 'react';
 
 interface HealthProps {
     updateValue: number;
+    buttonName: string;
   }
 
-export default function UpdateHealth({ updateValue }: HealthProps) {
+export default function UpdateHealth({ updateValue, buttonName }: HealthProps) {
     const { setHealth, health } = useHealthContext();
 
   // Function to update the health by passed in value
@@ -31,7 +32,7 @@ export default function UpdateHealth({ updateValue }: HealthProps) {
             onUpdateHealth();
           }}
         >
-          Update Health
+          {buttonName}
         </button>
     </>
   );
