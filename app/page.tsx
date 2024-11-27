@@ -13,6 +13,8 @@ import UpdateHealth from '@/app/components/updateHealth';
 
 import DisplayCharacter from '@/app/components/DisplayCharacter';
 import './style.css';
+import IQBar from './components/IQBar';
+import UpdateIQ from './components/updateIQ';
 
 export default function Home() {
   // // add states
@@ -111,7 +113,12 @@ export default function Home() {
         </div>
 
         <p>IQ: {IQ}</p>
+        <IQBar/>
+        <div>
+          <UpdateIQ buttonName={"Study"} updateValue={5}/>
+          <UpdateIQ buttonName={"TikTok"} updateValue={-5}/>
 
+        </div>
         <p>Motivation: {motivation}</p>
         <MotivationBar/>
         <div>
