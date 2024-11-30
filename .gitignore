@@ -1,1 +1,6 @@
-.next/
+# Ignore build output
+.next
+
+# Ignore dependencies
+node_modules
+*.json
