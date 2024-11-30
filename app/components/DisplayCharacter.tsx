@@ -11,16 +11,16 @@ export default function displayCharacter() {
   var tempIQ: number = IQ;
 
   if (IQ < 200 && IQ > 150){
-    tempIQ = 200;
-  }
-  if (IQ < 150 && IQ > 100){
     tempIQ = 150;
   }
-  if (IQ < 100 && IQ > 50){
+  if (IQ < 150 && IQ > 100){
     tempIQ = 100;
   }
-  if (IQ < 50 && IQ > 0){
+  if (IQ < 100 && IQ > 50){
     tempIQ = 50;
+  }
+  if (IQ < 50 && IQ > 0){
+    tempIQ = 0;
   }
   if (health < 100 && health > 50){
     tempHealth = 100;
