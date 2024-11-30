@@ -18,9 +18,9 @@ export default function UpdateHunger({ updateValue, buttonName }: HungerProps) {
   const onUpdateHunger = () => {
     setHunger(Math.min(Math.max(hunger + updateValue, 0), 100));
     if (buttonName == 'Feed') {
-      setText('You fed <b>Chicken</b> some 10Q. Satiety went up 5 points.');
+      setText('You fed <b>Alfred</b> some 10Q. Satiety went up 5 points.');
     } else {
-      setText('You starved <b>Chicken</b>. Satiety went down 5 points.')
+      setText('You starved <b>Alfred</b>. Satiety went down 5 points.')
     }
   };
 
