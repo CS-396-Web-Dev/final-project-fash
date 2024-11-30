@@ -23,12 +23,6 @@ export default function UpdateHunger({ updateValue, buttonName }: HungerProps) {
     } else {
       setText('You starved <b>Alfred</b>. Satiety went down 5 points.');
     }
-    // if (updateValue < 0) {
-    // startTimer(); // Start the timer after clicking the button
-    // }
-    // else{
-    //   stopTimer();
-    // }
   };
 
   // Hunger Timer Logic
@@ -43,9 +37,11 @@ export default function UpdateHunger({ updateValue, buttonName }: HungerProps) {
 
     // Cleanup interval when the timer stops or the component unmounts
     return () => {
-      if (hungerInterval) clearInterval(hungerInterval);
+      if (hungerInterval) {
+        console.log("STOP TIMER?")
+        clearInterval(hungerInterval);}
     };
-  }, [isTimerRunning, setHunger]);
+  }, [isTimerRunning]);
 
 
   useEffect(() => {
@@ -53,14 +49,6 @@ export default function UpdateHunger({ updateValue, buttonName }: HungerProps) {
     setIsTimerRunning(location === "gym");
   }, [location]);
 
-  // Start the timer
-  const startTimer = () => {
-    setIsTimerRunning(true); // Trigger the timer
-  };
-
-  const stopTimer = () => {
-    setIsTimerRunning(false); // Stop the timer
-  };
 
   // Log whenever hunger changes
   useEffect(() => {
