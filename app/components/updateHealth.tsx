@@ -18,9 +18,9 @@ export default function UpdateHealth({ updateValue, buttonName }: HealthProps) {
   const onUpdateHealth = () => {
     setHealth(Math.min(Math.max(health + updateValue, 0), 100));
     if (buttonName == 'Exercise') {
-      setText('You did a Chloe Ting workout with <b>Chicken</b>. Health went up 5 points.');
+      setText('You did a Chloe Ting workout with <b>Alfred</b>. Health went up 5 points.');
     } else {
-      setText('You made <b>Chicken</b> eat dining hall food. Health went down 5 points.')
+      setText('You made <b>Alfred</b> eat dining hall food. Health went down 5 points.')
     }
   };
 
