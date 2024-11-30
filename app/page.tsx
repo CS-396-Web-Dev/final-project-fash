@@ -149,11 +149,9 @@ export default function Home() {
           <UpdateMotivation buttonName={"Scold"} updateValue={-5}/>
           <UpdateMotivation buttonName={"Praise"} updateValue={5}/>
         </div>
-
+      
         <DisplayCharacter/>
-        <p id="message">
-          { text }
-        </p>
+        <span id="message" dangerouslySetInnerHTML={{__html: text}}></span>
       </body>
     </html>
   );

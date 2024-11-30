@@ -19,9 +19,9 @@ export default function UpdateMotivation({ updateValue, buttonName }: Motivation
     // we're assuming that motivation bar wants a percentage value
     setMotivation(Math.min(Math.max(motivation + updateValue, 0), 100));
     if (buttonName == 'Praise') {
-      setText('You praised Chicken. Motivation went up 5 points.');
+      setText('You praised <b>Chicken</b>. Motivation went up 5 points.');
     } else {
-      setText('You scolded Chicken. Motivation went down 5 points.')
+      setText('You scolded <b>Chicken</b>. Motivation went down 5 points.')
     }
   };
 

@@ -19,9 +19,9 @@ export default function UpdateIQ({ updateValue, buttonName }: IQProps) {
   const onUpdateIQ = () => {
     setIQ(Math.min(Math.max(IQ + updateValue, 0), 200));
     if (buttonName == 'Study') {
-      setText('You made Chicken watch lectures. IQ went up 5 points.');
+      setText('You made <b>Chicken</b> watch lectures. IQ went up 5 points.');
     } else {
-      setText('You went on TikTok with Chicken. IQ went down 5 points.')
+      setText('You went on TikTok with <b>Chicken</b>. IQ went down 5 points.')
     }
   };
 
