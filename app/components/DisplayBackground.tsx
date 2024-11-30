@@ -10,11 +10,10 @@ export default function displayBackground() {
   const { location, setLocation } = useLocationContext();
 
   return (
-    <div className="bg-cover -z-50">
-        <img
-          src={`${location}.jpg`}
-          alt={`${location}`}
-        />
-    </div>
+    <img
+        src={`${location}.png`}
+        alt={`${location}`}
+        className="fixed top-0 left-0 w-full h-full bg-cover bg-no-repeat -z-50 opacity-50"
+    />
   );
 }

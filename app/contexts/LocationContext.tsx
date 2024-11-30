@@ -16,7 +16,7 @@ interface Location {
 }
 
 const LocationContext = createContext<Location>({
-    location: 'mudd',
+    location: 'library',
     setLocation: () => {},
 });
 
@@ -27,7 +27,7 @@ export default function LocationContextProvider({
 }: LocationContextProviderProps) {
 
     const savedLocation = localStorage.getItem('location');
-    const initialLocation = savedLocation ? JSON.parse(savedLocation) : 'mudd';
+    const initialLocation = savedLocation ? JSON.parse(savedLocation) : 'library';
 
     const [location, setLocation] = useState(initialLocation);
 
