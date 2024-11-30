@@ -15,7 +15,7 @@ export default function UpdateIQ({ updateValue, buttonName }: IQProps) {
 
   // Function to update the IQ by passed in value
   const onUpdateIQ = () => {
-    setIQ(Math.min(Math.max(IQ + updateValue, 0), 100));
+    setIQ(Math.min(Math.max(IQ + updateValue, 0), 200));
   };
 
     // Log whenever IQ changes
