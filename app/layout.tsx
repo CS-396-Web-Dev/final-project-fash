@@ -3,6 +3,7 @@ import HealthContextProvider from '@/app/contexts/HealthContext';
 import HungerContextProvider from '@/app/contexts/HungerContext';
 import MotivationContextProvider from '@/app/contexts/MotivationContext';
 import IQContextProvider from '@/app/contexts/IqContext';
+import TextContextProvider from './contexts/TextContext';
 import './globals.css'
 
 // export const metadata = {
@@ -21,8 +22,10 @@ export default function RootLayout({
         <HealthContextProvider>
           <HungerContextProvider>
             <MotivationContextProvider>
-              <IQContextProvider> 
-                {children}
+              <IQContextProvider>
+                <TextContextProvider>
+                  {children}
+                </TextContextProvider> 
               </IQContextProvider>
             </MotivationContextProvider>
           </HungerContextProvider>

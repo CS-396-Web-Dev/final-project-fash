@@ -4,6 +4,7 @@ import { useHealthContext } from '@/app/contexts/HealthContext';
 import { useHungerContext } from '@/app/contexts/HungerContext';
 import { useIQContext } from '@/app/contexts/IqContext';
 import { useMotivationContext } from '@/app/contexts/MotivationContext';
+import { useTextContext } from './contexts/TextContext';
 import MotivationBar from '@/app/components/MotivationBar';
 import HungerBar from './components/HungerBar';
 import HealthBar from '@/app/components/HealthBar';
@@ -22,7 +23,7 @@ export default function Home() {
   const { hunger, setHunger } = useHungerContext();
   const { IQ, setIQ } = useIQContext();
   const { motivation, setMotivation } = useMotivationContext();
-
+  const { text, setText } = useTextContext();
 
 
   //
@@ -88,6 +89,21 @@ export default function Home() {
   // save motivation state to localStorage, whenever motivation state changes
   useEffect(() => {
     localStorage.setItem('motivation', JSON.stringify(motivation)); // save the motivation state locally
+  }, [motivation]);
+
+  // // TEXT
+  
+  // load text state from localStorage when home page mounts
+  useEffect(() => {
+    const savedText = localStorage.getItem('text');
+    if (savedText) {
+      setText(JSON.parse(savedText)); // set motivation state to stored motivation
+    }
+  }, []);
+
+  // save motivation state to localStorage, whenever motivation state changes
+  useEffect(() => {
+    localStorage.setItem('text', JSON.stringify(text)); // save the motivation state locally
   }, [motivation]);
 
   // return HTML
