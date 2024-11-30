@@ -115,8 +115,8 @@ export default function Home() {
         <p>IQ: {IQ}</p>
         <IQBar/>
         <div>
-          <UpdateIQ buttonName={"Study"} updateValue={5}/>
           <UpdateIQ buttonName={"TikTok"} updateValue={-5}/>
+          <UpdateIQ buttonName={"Study"} updateValue={5}/>
 
         </div>
         <p>Motivation: {motivation}</p>
