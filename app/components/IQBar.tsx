@@ -14,7 +14,7 @@ export default function IQBar() {
                 <div 
                     className="bg-blue-600 h-2.5 rounded-full"
                     // style="width: 50%"
-                    style={{ width: `${IQ}%` }}
+                    style={{ width: `${IQ / 2}%` }}
                 ></div> 
             </div>
     );
