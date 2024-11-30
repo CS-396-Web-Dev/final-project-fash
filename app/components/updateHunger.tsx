@@ -1,5 +1,6 @@
 import { useHungerContext } from '@/app/contexts/HungerContext';
 import { useEffect } from 'react';
+import { useTextContext } from '../contexts/TextContext';
 
 // var counter: number = 0;
 
@@ -11,10 +12,16 @@ interface HungerProps {
 
 export default function UpdateHunger({ updateValue, buttonName }: HungerProps) {
     const { setHunger, hunger } = useHungerContext();
+    const { setText, text } = useTextContext();
 
   // Function to update the hunger by passed in value
   const onUpdateHunger = () => {
     setHunger(Math.min(Math.max(hunger + updateValue, 0), 100));
+    if (buttonName == 'Feed') {
+      setText('You fed Chicken some 10Q. Satiety went up 5 points.');
+    } else {
+      setText('You starved Chicken. Satiety went down 5 points.')
+    }
   };
 
     // Log whenever hunger changes

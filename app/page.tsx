@@ -32,13 +32,13 @@ export default function Home() {
 
   // // HEALTH
 
-  // load health state from localStorage when home page mounts
-  useEffect(() => {
-    const savedHealth = localStorage.getItem('health');
-    if (savedHealth) {
-      setHealth(JSON.parse(savedHealth)); // set health state to stored health
-    }
-  }, []);
+  // // load health state from localStorage when home page mounts
+  // useEffect(() => {
+  //   const savedHealth = localStorage.getItem('health');
+  //   if (savedHealth) {
+  //     setHealth(JSON.parse(savedHealth)); // set health state to stored health
+  //   }
+  // }, []);
 
   // save health state to localStorage, whenever health state changes
   useEffect(() => {
@@ -63,12 +63,12 @@ export default function Home() {
   // // IQ
   
   // load IQ state from localStorage when home page mounts
-  useEffect(() => {
-    const savedIQ = localStorage.getItem('IQ');
-    if (savedIQ) {
-      setIQ(JSON.parse(savedIQ)); // set IQ state to stored IQ
-    }
-  }, []);
+  // useEffect(() => {
+  //   const savedIQ = localStorage.getItem('IQ');
+  //   if (savedIQ) {
+  //     setIQ(JSON.parse(savedIQ)); // set IQ state to stored IQ
+  //   }
+  // }, []);
 
   // save IQ state to localStorage, whenever IQ state changes
   useEffect(() => {
@@ -79,12 +79,12 @@ export default function Home() {
   // // MOTIVATION
   
   // load motivation state from localStorage when home page mounts
-  useEffect(() => {
-    const savedMotivation = localStorage.getItem('motivation');
-    if (savedMotivation) {
-      setMotivation(JSON.parse(savedMotivation)); // set motivation state to stored motivation
-    }
-  }, []);
+  // useEffect(() => {
+  //   const savedMotivation = localStorage.getItem('motivation');
+  //   if (savedMotivation) {
+  //     setMotivation(JSON.parse(savedMotivation)); // set motivation state to stored motivation
+  //   }
+  // }, []);
 
   // save motivation state to localStorage, whenever motivation state changes
   useEffect(() => {
@@ -94,12 +94,12 @@ export default function Home() {
   // // TEXT
   
   // load text state from localStorage when home page mounts
-  useEffect(() => {
-    const savedText = localStorage.getItem('text');
-    if (savedText) {
-      setText(JSON.parse(savedText)); // set motivation state to stored motivation
-    }
-  }, []);
+  // useEffect(() => {
+  //   const savedText = localStorage.getItem('text');
+  //   if (savedText) {
+  //     setText(JSON.parse(savedText)); // set motivation state to stored motivation
+  //   }
+  // }, []);
 
   // save motivation state to localStorage, whenever motivation state changes
   useEffect(() => {
@@ -143,6 +143,9 @@ export default function Home() {
         </div>
 
         <DisplayCharacter/>
+        <p id="message">
+          { text }
+        </p>
       </body>
     </html>
   );

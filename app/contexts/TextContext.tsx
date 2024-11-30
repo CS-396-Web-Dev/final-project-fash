@@ -11,13 +11,13 @@ interface TextContextProviderProps {
 }
 
 interface Text {
-    text: number;
+    text: string;
     setText: Dispatch<any>;
 }
 
 // initial Text context
 const TextContext = createContext<Text>({
-    text: 100,
+    text: '',
     setText: () => {},
 });
 
@@ -28,7 +28,7 @@ export default function TextContextProvider({
 }: TextContextProviderProps) {
 
     const savedText = localStorage.getItem('text');
-    const initialText = savedText ? JSON.parse(savedText) : 100;
+    const initialText = savedText ? JSON.parse(savedText) : '';
 
     const [text, setText] = useState(initialText);
 
