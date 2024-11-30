@@ -16,27 +16,16 @@ export default function UpdateLocation({ locationName }: LocationProps) {
   // Function to update the health by passed in value
   const onUpdateLocation = () => {
     setLocation(locationName);
-//     if (locationName == 'library') {
-//       setText('You walked to the library');
-//     } else {
-//       setText('You made <b>Chicken</b> eat dining hall food. Health went down 5 points.')
-//     }
-//     if (locationName == 'dorm') {
-//         setText('You did a Chloe Ting workout with <b>Chicken</b>. Health went up 5 points.');
-//         } else {
-//         setText('You made <b>Chicken</b> eat dining hall food. Health went down 5 points.')
-//         }
-//       if (locationName == 'gym') {
-//         setText('You did a Chloe Ting workout with <b>Chicken</b>. Health went up 5 points.');
-//       } else {
-//         setText('You made <b>Chicken</b> eat dining hall food. Health went down 5 points.')
-//       }
-//       if (locationName == 'dining-hall') {
-//         setText('You did a Chloe Ting workout with <b>Chicken</b>. Health went up 5 points.');
-//       } else {
-//         setText('You made <b>Chicken</b> eat dining hall food. Health went down 5 points.')
-//       }    
-  };
+    if (locationName == 'library') {
+      setText('You forced <b>Alfred</b> into Mudd Library. He plans to stare blankly at his RecipeStepTracker.');
+    } else if (locationName == 'dorm') {
+      setText('You walked <b>Alfred</b> back to his dorm. He realizes his mini fridge is starting to smell funky.');
+    } else if (locationName == 'gym') {
+      setText('You walked <b>Alfred</b> to SPAC. He has been wanting bigger wing muscles lately.');
+    } else {
+        setText('You walked <b>Alfred</b> to Allison Dining Hall. The cajun chicken looks extra dry today.');   
+    };
+  }
 
     // Log whenever health changes
     useEffect(() => {
