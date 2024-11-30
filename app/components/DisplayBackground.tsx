@@ -1,5 +1,5 @@
 'use client';
-import { LocationContext } from '@/app/contexts/LocationContext';
+import { useLocationContext } from '@/app/contexts/LocationContext';
 import { useEffect } from 'react';
 
 // interface BackgroundProps {
