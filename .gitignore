@@ -1,5 +1,5 @@
 # Ignore build output
-.next
+.next/
 
 # Ignore dependencies
 node_modules
