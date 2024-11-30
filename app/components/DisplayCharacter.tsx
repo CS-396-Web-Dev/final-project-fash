@@ -42,7 +42,7 @@ export default function displayCharacter() {
 //     }, [health]);
 
   return (
-    <div className="inline-block">
+    <div className="inline-block m-10 z-10">
         <img
           src={`character_health${tempHealth}_iq${tempIQ}.png`}
           alt="my image"
