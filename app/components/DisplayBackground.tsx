@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 //   }
 
 export default function displayBackground() {
-  const { location, setLocation } = LocationContext();
+  const { location, setLocation } = useLocationContext();
 
   return (
     <div className="bg-cover -z-50">
