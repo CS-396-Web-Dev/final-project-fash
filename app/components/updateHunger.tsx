@@ -1,6 +1,7 @@
 import { useHungerContext } from '@/app/contexts/HungerContext';
 import { useEffect, useState } from 'react';
 import { useTextContext } from '../contexts/TextContext';
+import { useLocationContext } from '@/app/contexts/LocationContext';
 
 interface HungerProps {
   updateValue: number;
@@ -11,6 +12,7 @@ var hungerInterval: NodeJS.Timeout | null = null;
 export default function UpdateHunger({ updateValue, buttonName }: HungerProps) {
   const { setHunger, hunger } = useHungerContext();
   const { setText } = useTextContext();
+  const { location } = useLocationContext();
   const [isTimerRunning, setIsTimerRunning] = useState<boolean>(false); // State to track if the timer is active
 
   // Function to update hunger manually
@@ -21,12 +23,12 @@ export default function UpdateHunger({ updateValue, buttonName }: HungerProps) {
     } else {
       setText('You starved <b>Alfred</b>. Satiety went down 5 points.');
     }
-    if (updateValue < 0) {
-    startTimer(); // Start the timer after clicking the button
-    }
-    else{
-      stopTimer();
-    }
+    // if (updateValue < 0) {
+    // startTimer(); // Start the timer after clicking the button
+    // }
+    // else{
+    //   stopTimer();
+    // }
   };
 
   // Hunger Timer Logic
@@ -44,6 +46,12 @@ export default function UpdateHunger({ updateValue, buttonName }: HungerProps) {
       if (hungerInterval) clearInterval(hungerInterval);
     };
   }, [isTimerRunning, setHunger]);
+
+
+  useEffect(() => {
+    // Stop the timer when location changes
+    setIsTimerRunning(location === "gym");
+  }, [location]);
 
   // Start the timer
   const startTimer = () => {
