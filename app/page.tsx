@@ -5,6 +5,8 @@ import { useHungerContext } from '@/app/contexts/HungerContext';
 import { useIQContext } from '@/app/contexts/IqContext';
 import { useMotivationContext } from '@/app/contexts/MotivationContext';
 import { useTextContext } from './contexts/TextContext';
+import { useLocationContext } from './contexts/LocationContext';
+
 import MotivationBar from '@/app/components/MotivationBar';
 import HungerBar from './components/HungerBar';
 import HealthBar from '@/app/components/HealthBar';
@@ -13,13 +15,12 @@ import UpdateHunger from './components/updateHunger';
 import UpdateHealth from '@/app/components/updateHealth';
 import UpdateLocation from '@/app/components/updateLocation';
 
-
 import DisplayBackground from '@/app/components/DisplayBackground';
 import DisplayCharacter from '@/app/components/DisplayCharacter';
 import './style.css';
 import IQBar from './components/IQBar';
 import UpdateIQ from './components/updateIQ';
-import { useLocationContext } from './contexts/LocationContext';
+import CurrDateTime from './components/CurrDateTime';
 
 export default function Home() {
   // // add states
@@ -126,6 +127,7 @@ export default function Home() {
       <body>
         <DisplayBackground />
         <h1>My FASH Tamagotchi Stats</h1>
+        <CurrDateTime />
         <p className="state"><b>Health: {health}</b></p>
         <HealthBar/>
         <div>
