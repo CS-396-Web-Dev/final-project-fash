@@ -5,6 +5,7 @@ import MotivationContextProvider from '@/app/contexts/MotivationContext';
 import IQContextProvider from '@/app/contexts/IqContext';
 import TextContextProvider from './contexts/TextContext';
 import './globals.css'
+import LocationContextProvider from './contexts/LocationContext';
 
 // export const metadata = {
 //   title: 'Next.js',
@@ -24,7 +25,9 @@ export default function RootLayout({
             <MotivationContextProvider>
               <IQContextProvider>
                 <TextContextProvider>
-                  {children}
+                  <LocationContextProvider>
+                    {children}
+                  </LocationContextProvider>
                 </TextContextProvider> 
               </IQContextProvider>
             </MotivationContextProvider>
