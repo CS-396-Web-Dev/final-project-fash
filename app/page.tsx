@@ -16,6 +16,7 @@ import DisplayCharacter from '@/app/components/DisplayCharacter';
 import './style.css';
 import IQBar from './components/IQBar';
 import UpdateIQ from './components/updateIQ';
+import { useLocationContext } from './contexts/LocationContext';
 
 export default function Home() {
   // // add states
@@ -24,6 +25,7 @@ export default function Home() {
   const { IQ, setIQ } = useIQContext();
   const { motivation, setMotivation } = useMotivationContext();
   const { text, setText } = useTextContext();
+  const { location, setLocation } = useLocationContext();
 
 
   //
@@ -104,7 +106,13 @@ export default function Home() {
   // save motivation state to localStorage, whenever motivation state changes
   useEffect(() => {
     localStorage.setItem('text', JSON.stringify(text)); // save the motivation state locally
-  }, [motivation]);
+  }, [text]);
+
+  // // Location
+  // save location state to localStoreage, whenever location state changes
+  useEffect(() => {
+    localStorage.setItem('location', JSON.stringify(location)); // save the location state locally
+  }, [location]);
 
   // return HTML
   return (

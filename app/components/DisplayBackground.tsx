@@ -1,5 +1,5 @@
 'use client';
-import { LocationContext } from '@/app/contexts/LocationContext';
+import { useLocationContext } from '@/app/contexts/LocationContext';
 import { useEffect } from 'react';
 
 // interface BackgroundProps {
@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 //   }
 
 export default function displayBackground() {
-  const { location, setLocation } = LocationContext();
+  const { location, setLocation } = useLocationContext();
 
   return (
     <div className="bg-cover -z-50">
