@@ -22,15 +22,18 @@ export default function CurrDateTime () {
     const hour = date.getHours();
     const minute = date.getMinutes();
 
-    // format the minute string if it's one digit
+    // format the time string as am/pm
     const formattedMinute = minute < 10 ? `0${minute}` : minute
+    const formattedHour = hour % 12 || 12;         // if 0, show as 12 (midnight)
+    // ^ this is kinda unreadable code, maybe factor out
+    const ampm = hour < 12 ? 'am' : 'pm'
     
     return (
         <div>
             {/* <p>Time: {date.toLocaleTimeString()}</p>
             <p>Date: {date.toLocaleDateString()}</p>
             <p>Day: {day}</p> */}
-            <p>{day} {hour}:{formattedMinute}</p>
+            <p>{day} {formattedHour}:{formattedMinute}{ampm}</p>
         </div>
     );
 }
