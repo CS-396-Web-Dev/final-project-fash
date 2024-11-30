@@ -11,8 +11,10 @@ import HealthBar from '@/app/components/HealthBar';
 import UpdateMotivation from '@/app/components/updateMotivation';
 import UpdateHunger from './components/updateHunger';
 import UpdateHealth from '@/app/components/updateHealth';
-import DisplayBackground from '@/app/components/DisplayBackground';
+import UpdateLocation from '@/app/components/updateLocation';
 
+
+import DisplayBackground from '@/app/components/DisplayBackground';
 import DisplayCharacter from '@/app/components/DisplayCharacter';
 import './style.css';
 import IQBar from './components/IQBar';
@@ -153,6 +155,13 @@ export default function Home() {
         </div>
       
         <DisplayCharacter/>
+        <div>
+          <UpdateLocation locationName={"library"}/>
+          <UpdateLocation locationName={"gym"}/>
+          <UpdateLocation locationName={"dorm"}/>
+          <UpdateLocation locationName={"dining-hall"}/>
+        </div>
+
         <span id="message" dangerouslySetInnerHTML={{__html: text}}></span>
       </body>
     </html>
