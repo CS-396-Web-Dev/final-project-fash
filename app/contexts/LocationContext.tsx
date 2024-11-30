@@ -17,7 +17,7 @@ interface Location {
 
 const LocationContext = createContext<Location>({
     location: 'mudd',
-    setLocation: () => {};
+    setLocation: () => {},
 });
 
 export const useLocationContext = () => useContext(LocationContext);
@@ -32,6 +32,8 @@ export default function LocationContextProvider({
     const [location, setLocation] = useState(initialLocation);
 
     return(
-        
-    )
+        <LocationContext.Provider value={{ location, setLocation }}>
+            {children}
+        </LocationContext.Provider>
+    );
 }
