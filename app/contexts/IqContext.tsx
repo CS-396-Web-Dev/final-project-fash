@@ -26,7 +26,12 @@ export const useIQContext = () => useContext(IQContext);
 export default function IQContextProvider({
     children,
 }: IQContextProviderProps) {
-    const [IQ, setIQ] = useState(100);
+    const savedIQ = localStorage.getItem('IQ');
+    const initialIQ = savedIQ ? JSON.parse(savedIQ) : 50;
+
+    const [IQ, setIQ] = useState(initialIQ);
+    
+
 
     return (
         <IQContext.Provider value={{ IQ, setIQ }}>

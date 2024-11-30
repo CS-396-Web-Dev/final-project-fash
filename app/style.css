@@ -37,6 +37,7 @@ h1 {
 }
 
 .state {
+  border-radius: 25px;
   padding: 5px;
   background: #FFFFFF;
 }
