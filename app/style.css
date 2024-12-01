@@ -16,8 +16,9 @@ body {
   align-items: center;
   justify-content: center;
   /* height: 100vh; */
-  min-height: 100vh;    /* Fix for cutoff title section, from ChatGPT */
-  overflow-y: auto;     /* Prompt: "Cut off content on top of screen, but can't scroll up in a react/html/css project" */
+  min-height: 100vh;    /* Prompt: "Cut off content on top of screen, but can't scroll up in a react/html/css project" --> Fix for cutoff title section, from ChatGPT */
+  overflow-y: auto;   
+  overflow-x: auto;  /* allowing scroll bars if content is cut off horizontally, too*/  
   margin: 0;
   padding: 0;
   display: flex;
