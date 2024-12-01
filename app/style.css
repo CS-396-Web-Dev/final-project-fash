@@ -34,8 +34,11 @@ h1 {
   border-radius: 25px;
   border: 2px solid #000000;
   padding: 20px;
-  width: 300px;
-  height: 125px;
+  width: 25vw;
+  min-width: 300px;
+  max-width: 600px;
+  min-height: 125px;
+  height: 20vh;
   background: #FFFFFF;
 }
 
