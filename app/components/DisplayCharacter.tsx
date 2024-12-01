@@ -42,11 +42,12 @@ export default function displayCharacter() {
 //     }, [health]);
 
   return (
-    <div className="inline-block m-10 z-0">
+    <div className="inline-block m-2 z-0">
         <img
           src={`character_health${tempHealth}_iq${tempIQ}.png`}
           alt="my image"
-          className="w-20 h-20"
+          // className="w-20 h-20"
+          className="w-20 h-20 md:w-30 md:h-30 lg:w-40 lg:h-40"   // responsive character size 
         />
     </div>
   );
