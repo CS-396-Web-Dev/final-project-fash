@@ -72,17 +72,17 @@ export default function UpdateHunger() {
             console.log("Starting new hunger timer...");
             console.log("starting new health timer...");
             healthInterval = setInterval(() => {
-                setHealth((prevHealth:number) => Math.min(prevHealth + 3, 100)); // Increase Health by 5
+                setHealth((prevHealth:number) => Math.min(prevHealth + 4, 100)); // Increase Health by 5
             }, 6000); // Update every 6 seconds
             hungerInterval = setInterval(() => {
-                setHunger((prevHunger:number) => Math.max(prevHunger - 1, 0)); // Decrement hunger by 1
+                setHunger((prevHunger:number) => Math.max(prevHunger - 2, 0)); // Decrement hunger by 1
             }, 6000); // Update every 6 seconds
         }
         else if (location === "library"){
             console.log("starting new motivation timer...");
             console.log("starting a new IQ timer...");
             IQInterval = setInterval(() => {
-                setIQ((prevIQ:number) => Math.min(prevIQ + 1, 200)); // Increase IQ by 1
+                setIQ((prevIQ:number) => Math.min(prevIQ + 2, 200)); // Increase IQ by 1
               }, 6000); // Update every 6 seconds            
             motivationInterval = setInterval(() => {
                 setMotivation((prevMotivation:number) => Math.max(prevMotivation - 1, 0)); // Decrement motivation by 1
@@ -91,10 +91,10 @@ export default function UpdateHunger() {
         else if (location === "dorm"){
             console.log("starting new health timer...");
             healthInterval = setInterval(() => {
-                setHealth((prevHealth:number) => Math.min(prevHealth + 1, 100)); // Increase Health by 1
+                setHealth((prevHealth:number) => Math.min(prevHealth + 2, 100)); // Increase Health by 1
             }, 6000); // Update every 6 seconds
             motivationInterval = setInterval(() => {
-                setHealth((prevMotivation:number) => Math.min(prevMotivation + 1, 100)); // Increase motivation by 1
+                setMotivation((prevMotivation:number) => Math.min(prevMotivation + 2, 100)); // Increase motivation by 1
             }, 6000); // Update every 6 seconds
         }
         else if (location === "dining-hall"){
