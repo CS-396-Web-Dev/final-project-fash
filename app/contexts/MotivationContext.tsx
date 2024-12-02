@@ -16,7 +16,7 @@ import {
   }
 
   const MotivationContext = createContext<Motivation>({
-    motivation: 50,
+    motivation: 50,             // Initialize motivation to half its max value
     setMotivation: () => {},
   });
 

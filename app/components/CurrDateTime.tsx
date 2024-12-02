@@ -23,17 +23,20 @@ export default function CurrDateTime () {
     const minute = date.getMinutes();
 
     // format the time string as am/pm
+    // ChatGPT Prompt: "How can i format a numeric minute into a string for a timer in Javascript?"
     const formattedMinute = minute < 10 ? `0${minute}` : minute
-    const formattedHour = hour % 12 || 12;         // if 0, show as 12 (midnight)
-    // ^ this is kinda unreadable code, maybe factor out
+    let formattedHour = hour % 12;
+    if ( formattedHour == 0 ) {
+        // it may be midnight or noon, in which case the hour is 12 (not zero) 
+        formattedHour = 12;
+    }
     const ampm = hour < 12 ? 'am' : 'pm'
     
     return (
         <div>
-            {/* <p>Time: {date.toLocaleTimeString()}</p>
-            <p>Date: {date.toLocaleDateString()}</p>
-            <p>Day: {day}</p> */}
-            <p>{day} {formattedHour}:{formattedMinute}{ampm}</p>
+            <p className="font-bold">
+                {day} {formattedHour}:{formattedMinute}{ampm}
+            </p>
         </div>
     );
 }

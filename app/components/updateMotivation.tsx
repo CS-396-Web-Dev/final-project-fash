@@ -1,8 +1,6 @@
 import { useMotivationContext } from '../contexts/MotivationContext';
 import { useEffect, useState } from 'react';
 import { useTextContext } from '../contexts/TextContext';
-// var counter: number = 0;
-
 
 interface MotivationProps {
   updateValue: number;
@@ -10,10 +8,10 @@ interface MotivationProps {
 }
 
 export default function UpdateMotivation({ updateValue, buttonName }: MotivationProps) {
-    const { motivation, setMotivation } = useMotivationContext();
-    const { text, setText } = useTextContext();
+  const { motivation, setMotivation } = useMotivationContext();
+  const { text, setText } = useTextContext();
 
-  // Function to update the health by passed in value
+  // Function to update the motivation by passed in value
   const onUpdateMotivation = () => {
     // we're assuming that motivation bar wants a percentage value
     setMotivation(Math.min(Math.max(motivation + updateValue, 0), 100));
@@ -24,7 +22,7 @@ export default function UpdateMotivation({ updateValue, buttonName }: Motivation
     }
   };
 
-    // Log whenever health changes
+    // Log whenever motivation changes
     useEffect(() => {
       console.log(motivation);
     }, [motivation]);
