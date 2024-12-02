@@ -1,7 +1,6 @@
 import { useMotivationContext } from '../contexts/MotivationContext';
 import { useEffect, useState } from 'react';
 import { useTextContext } from '../contexts/TextContext';
-import { useLocationContext } from '@/app/contexts/LocationContext';
 // var counter: number = 0;
 
 
@@ -13,8 +12,6 @@ interface MotivationProps {
 export default function UpdateMotivation({ updateValue, buttonName }: MotivationProps) {
     const { motivation, setMotivation } = useMotivationContext();
     const { text, setText } = useTextContext();
-    const { location } = useLocationContext();
-    const [isTimerRunning, setIsTimerRunning] = useState<boolean>(false); // State to track if the timer is active
 
   // Function to update the health by passed in value
   const onUpdateMotivation = () => {

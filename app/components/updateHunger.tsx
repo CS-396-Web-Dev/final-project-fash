@@ -1,7 +1,6 @@
 import { useHungerContext } from '@/app/contexts/HungerContext';
 import { useEffect, useState } from 'react';
 import { useTextContext } from '../contexts/TextContext';
-import { useLocationContext } from '@/app/contexts/LocationContext';
 
 interface HungerProps {
   updateValue: number;
@@ -11,8 +10,6 @@ interface HungerProps {
 export default function UpdateHunger({ updateValue, buttonName }: HungerProps) {
   const { setHunger, hunger } = useHungerContext();
   const { setText } = useTextContext();
-  const { location } = useLocationContext();
-  const [isTimerRunning, setIsTimerRunning] = useState<boolean>(false); // State to track if the timer is active
 
   // Function to update hunger manually
   const onUpdateHunger = () => {
