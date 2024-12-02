@@ -13,13 +13,31 @@ export default function UpdateMotivation({ updateValue, buttonName }: Motivation
 
   // Function to update the motivation by passed in value
   const onUpdateMotivation = () => {
-    // we're assuming that motivation bar wants a percentage value
-    setMotivation(Math.min(Math.max(motivation + updateValue, 0), 100));
-    if (buttonName == 'Praise') {
-      setText('You praised <b>Alfred</b>. Motivation went up 5 points.');
-    } else {
-      setText('You scolded <b>Alfred</b>. Motivation went down 5 points.')
+    let buttonPressable:boolean = false;
+    const praise_time_pressed = localStorage.getItem('praise_time_pressed');
+
+    if (praise_time_pressed){
+      const timeElapsedInSeconds = Math.floor((Date.now() - parseInt(praise_time_pressed, 10)) / 1000);
+      if (timeElapsedInSeconds >= 30){
+        buttonPressable = true;
+      }
     }
+    else{
+      buttonPressable = true;
+    }
+    if (buttonName != 'Praise'){
+      buttonPressable = true;
+    }
+    if (buttonPressable){
+      setMotivation(Math.min(Math.max(motivation + updateValue, 0), 100));
+      if (buttonName == 'Praise') {
+        setText('You praised <b>Alfred</b>. Motivation went up 5 points.');
+        localStorage.setItem('praise_time_pressed', Date.now().toString()); // save the last time app accessed
+      } else {
+        setText('You scolded <b>Alfred</b>. Motivation went down 5 points.')
+      }
+    }
+    // we're assuming that motivation bar wants a percentage value
   };
 
     // Log whenever motivation changes

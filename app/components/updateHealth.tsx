@@ -16,11 +16,30 @@ export default function UpdateHealth({ updateValue, buttonName }: HealthProps) {
 
   // Function to update the health by passed in value
   const onUpdateHealth = () => {
-    setHealth(Math.min(Math.max(health + updateValue, 0), 100));
-    if (buttonName == 'Exercise') {
-      setText('You did a Chloe Ting workout with <b>Alfred</b>. Health went up 5 points.');
-    } else {
-      setText('You made <b>Alfred</b> eat dining hall food. Health went down 5 points.')
+    let buttonPressable:boolean = false;
+    const exercise_time_pressed = localStorage.getItem('exercise_time_pressed');
+
+    if (exercise_time_pressed){
+      const timeElapsedInSeconds = Math.floor((Date.now() - parseInt(exercise_time_pressed, 10)) / 1000);
+      if (timeElapsedInSeconds >= 30){
+        buttonPressable = true;
+      }
+    }
+    else{
+      buttonPressable = true;
+    }
+    if (buttonName != 'Exercise'){
+      buttonPressable = true;
+    }
+
+    if (buttonPressable){
+      setHealth(Math.min(Math.max(health + updateValue, 0), 100));
+      if (buttonName == 'Exercise') {
+        setText('You did a Chloe Ting workout with <b>Alfred</b>. Health went up 5 points.');
+        localStorage.setItem('exercise_time_pressed', Date.now().toString()); // save the last time app accessed
+      } else {
+        setText('You made <b>Alfred</b> eat dining hall food. Health went down 5 points.')
+      }
     }
   };
 
