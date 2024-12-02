@@ -17,7 +17,7 @@ interface IQ {
 
 // initial IQ context
 const IQContext = createContext<IQ>({
-    IQ: 100,
+    IQ: 0,
     setIQ: () => {},
 });
 
@@ -27,7 +27,7 @@ export default function IQContextProvider({
     children,
 }: IQContextProviderProps) {
     const savedIQ = localStorage.getItem('IQ');
-    const initialIQ = savedIQ ? JSON.parse(savedIQ) : 50;
+    const initialIQ = savedIQ ? JSON.parse(savedIQ) : 0;
 
     const [IQ, setIQ] = useState(initialIQ);
     

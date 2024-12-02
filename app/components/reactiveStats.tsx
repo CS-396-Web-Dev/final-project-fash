@@ -93,6 +93,9 @@ export default function UpdateHunger() {
             healthInterval = setInterval(() => {
                 setHealth((prevHealth:number) => Math.min(prevHealth + 1, 100)); // Increase Health by 1
             }, 6000); // Update every 6 seconds
+            motivationInterval = setInterval(() => {
+                setHealth((prevMotivation:number) => Math.min(prevMotivation + 1, 100)); // Increase motivation by 1
+            }, 6000); // Update every 6 seconds
         }
         else if (location === "dining-hall"){
             console.log("starting new health timer...");
