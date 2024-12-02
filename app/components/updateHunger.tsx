@@ -7,7 +7,6 @@ interface HungerProps {
   updateValue: number;
   buttonName: string;
 }
-var hungerInterval: NodeJS.Timeout | null = null;
 
 export default function UpdateHunger({ updateValue, buttonName }: HungerProps) {
   const { setHunger, hunger } = useHungerContext();
@@ -24,30 +23,6 @@ export default function UpdateHunger({ updateValue, buttonName }: HungerProps) {
       setText('You starved <b>Alfred</b>. Satiety went down 5 points.');
     }
   };
-
-  // Hunger Timer Logic
-  useEffect(() => {
-    let hungerInterval: NodeJS.Timeout | null = null;
-
-    if (isTimerRunning) {
-      hungerInterval = setInterval(() => {
-        setHunger((prevHunger:number) => Math.max(prevHunger - 1, 0)); // Decrement hunger by 1
-      }, 600); // Update every 6 seconds
-    }
-
-    // Cleanup interval when the timer stops or the component unmounts
-    return () => {
-      if (hungerInterval) {
-        console.log("STOP TIMER?")
-        clearInterval(hungerInterval);}
-    };
-  }, [isTimerRunning]);
-
-
-  useEffect(() => {
-    // Stop the timer when location changes
-    setIsTimerRunning(location === "gym");
-  }, [location]);
 
 
   // Log whenever hunger changes

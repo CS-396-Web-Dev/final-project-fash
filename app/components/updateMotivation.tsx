@@ -27,27 +27,6 @@ export default function UpdateMotivation({ updateValue, buttonName }: Motivation
     }
   };
 
-    useEffect(() => {
-      let motivationInterval: NodeJS.Timeout | null = null;
-
-      if (isTimerRunning) {
-        motivationInterval = setInterval(() => {
-          setMotivation((prevMotivation:number) => Math.max(prevMotivation - 1, 0)); // Decrement motivation by 1
-        }, 600); // Update every 6 seconds
-      }
-
-      return () => {
-        if (motivationInterval) {
-          console.log("STOP TIMER?")
-          clearInterval(motivationInterval);}
-        };
-      }, [isTimerRunning]);
-    
-      useEffect(() => {
-        // Stop the timer when location changes
-        setIsTimerRunning(location === "dorm");
-      }, [location]);
-
     // Log whenever health changes
     useEffect(() => {
       console.log(motivation);

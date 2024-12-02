@@ -15,6 +15,8 @@ import UpdateHunger from './components/updateHunger';
 import UpdateHealth from '@/app/components/updateHealth';
 import UpdateLocation from '@/app/components/updateLocation';
 
+import ReactiveStats from '@/app/components/reactiveStats';
+
 import DisplayBackground from '@/app/components/DisplayBackground';
 import DisplayCharacter from '@/app/components/DisplayCharacter';
 import './style.css';
@@ -127,6 +129,7 @@ export default function Home() {
       </head>
       <body>
         <DisplayBackground />
+        <ReactiveStats />
         <h1>My FASH Tamagotchi Stats</h1>
         <CurrDateTime />
         <p className="state"><b>Health: {health}</b></p>
