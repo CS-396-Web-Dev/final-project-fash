@@ -22,7 +22,7 @@ export default function UpdateIQ({ updateValue, buttonName }: IQProps) {
 
     if (study_time_pressed){
       const timeElapsedInSeconds = Math.floor((Date.now() - parseInt(study_time_pressed, 10)) / 1000);
-      if (timeElapsedInSeconds >= 30){
+      if (timeElapsedInSeconds >= 0){
         buttonPressable = true;
       }
     }
