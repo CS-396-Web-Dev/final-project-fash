@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+
+/* body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: black;
+  background-color: white;
+} */
+
+body {
+  font-family: 'Courier New', Courier, monospace; /* What font do we want here */
+  background: linear-gradient(45deg, #aaf8ff, #ffffff);
+  color: #333;
+  align-items: center;
+  justify-content: center;
+  /* height: 100vh; */
+  min-height: 100vh;    /* Prompt: "Cut off content on top of screen, but can't scroll up in a react/html/css project" --> Fix for cutoff title section, from ChatGPT */
+  overflow-y: auto;   
+  overflow-x: auto;  /* allowing scroll bars if content is cut off horizontally, too*/  
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+#message {
+  border-radius: 25px;
+  border: 2px solid #000000;
+  padding: 20px;
+  width: 25vw;
+  min-width: 300px;
+  max-width: 600px;
+  min-height: 125px;
+  height: 20vh;
+  background: #FFFFFF;
+}
+
+.state {
+  border-radius: 25px;
+  padding: 5px;
+  background: #FFFFFF;
+}
+
